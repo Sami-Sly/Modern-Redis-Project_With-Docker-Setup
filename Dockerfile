@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # 4️⃣ Install dependencies
-RUN npm ci
+RUN npm install
 
 # 5️⃣ Copy all source code
 COPY . .
@@ -26,7 +26,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
 
 # 9️⃣ Install only production deps
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 # 10️⃣ Expose app port
 EXPOSE 7000
