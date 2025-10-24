@@ -12,9 +12,16 @@ const PORT = process.env.PORT || 7000;
 const app = express();
 
 // ✅ CORS setup (allow frontend on localhost:3000)
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // your frontend URL
+//     credentials: true,
+//   })
+// );
+
 app.use(
   cors({
-    origin: "http://localhost:3000", // your frontend URL
+    origin: "https://modern-redis-project-with-docker-se.vercel.app", // your frontend URL
     credentials: true,
   })
 );
